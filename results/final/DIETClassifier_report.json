@@ -1,0 +1,28 @@
+{
+  "person_name": {
+    "precision": 0.8181818181818182,
+    "recall": 0.9473684210526315,
+    "f1-score": 0.8780487804878049,
+    "support": 19,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.8181818181818182,
+    "recall": 0.9473684210526315,
+    "f1-score": 0.8780487804878049,
+    "support": 19
+  },
+  "macro avg": {
+    "precision": 0.8181818181818182,
+    "recall": 0.9473684210526315,
+    "f1-score": 0.8780487804878049,
+    "support": 19
+  },
+  "weighted avg": {
+    "precision": 0.8181818181818182,
+    "recall": 0.9473684210526315,
+    "f1-score": 0.8780487804878049,
+    "support": 19
+  },
+  "accuracy": 0.9954421148587056
+}

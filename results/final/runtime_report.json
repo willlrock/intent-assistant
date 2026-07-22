@@ -1,0 +1,111 @@
+{
+  "total": 235,
+  "correct": 209,
+  "accuracy": 0.8893617021276595,
+  "raw_correct": 210,
+  "raw_accuracy": 0.8936170212765957,
+  "fallback_count": 7,
+  "fallback_raw_correct_count": 1,
+  "fallback_raw_incorrect_count": 6,
+  "fallback_rate": 0.029787234042553193,
+  "accepted_count": 228,
+  "coverage": 0.9702127659574468,
+  "accepted_correct": 209,
+  "selective_accuracy": 0.9166666666666666,
+  "fallback_expected_distribution": {
+    "ask_time": 2,
+    "out_of_scope": 2,
+    "ask_nlu": 1,
+    "ask_project_structure": 1,
+    "smalltalk_joke": 1
+  },
+  "top_confusions": [
+    {
+      "expected": "out_of_scope",
+      "predicted": "inform_name",
+      "count": 3
+    },
+    {
+      "expected": "ask_time",
+      "predicted": "nlu_fallback",
+      "count": 2
+    },
+    {
+      "expected": "out_of_scope",
+      "predicted": "help",
+      "count": 2
+    },
+    {
+      "expected": "out_of_scope",
+      "predicted": "nlu_fallback",
+      "count": 2
+    },
+    {
+      "expected": "ask_creator",
+      "predicted": "thanks",
+      "count": 1
+    },
+    {
+      "expected": "ask_name",
+      "predicted": "inform_name",
+      "count": 1
+    },
+    {
+      "expected": "ask_nlu",
+      "predicted": "nlu_fallback",
+      "count": 1
+    },
+    {
+      "expected": "ask_project_structure",
+      "predicted": "nlu_fallback",
+      "count": 1
+    },
+    {
+      "expected": "ask_run",
+      "predicted": "ask_training",
+      "count": 1
+    },
+    {
+      "expected": "feedback_bad",
+      "predicted": "ask_date",
+      "count": 1
+    },
+    {
+      "expected": "feedback_bad",
+      "predicted": "thanks",
+      "count": 1
+    },
+    {
+      "expected": "greet",
+      "predicted": "help",
+      "count": 1
+    },
+    {
+      "expected": "out_of_scope",
+      "predicted": "ask_nlu",
+      "count": 1
+    },
+    {
+      "expected": "out_of_scope",
+      "predicted": "ask_project_structure",
+      "count": 1
+    },
+    {
+      "expected": "out_of_scope",
+      "predicted": "ask_run",
+      "count": 1
+    }
+  ],
+  "metadata": {
+    "model_file": "models/russian-assistant-v2.tar.gz",
+    "model_sha256": "1b99ab0a48dfcc4f33b55d46dac2be9272ef53fe45d4923eede76e806ab4309d",
+    "nlu_file": "tests/nlu_test.yml",
+    "nlu_sha256": "dc21a5e70c9c47a01fa9cb07586923be2454e4f248c7b75dd352b40e773c117a",
+    "config_file": "config.yml",
+    "config_sha256": "119b7931dc61ca5c44638a9bf9b8f2f1618f094e86444c02c75028735e7d4481",
+    "python_version": "3.10.11",
+    "rasa_version": "3.6.21",
+    "rasa_sdk_version": "3.6.2",
+    "generated_at_utc": "2026-07-22T09:55:17Z"
+  }
+}

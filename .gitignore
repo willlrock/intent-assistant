@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+.venv-rasa/
+.runtime/
+
+# Rasa and generated evaluation data
+.rasa/
+models/
+results/*
+!results/README.md
+!results/experiments.md
+!results/final/
+results/final/*
+!results/final/summary.md
+!results/final/*_report.json
+!results/final/*_errors.json
+!results/final/*_confusion_matrix.png
+!results/final/*_histogram.png
+!results/final/runtime_report.json
+
+# Local application state
+.config/
+.keras/
+.env
+.env.*
+!.env.example
+*.log
+.agents/
+.codex/
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Historical unpacked duplicate and local audit artifacts
+/rasa_diploma/
+/artifacts/
+/outputs/
+/output/
+/document_tools/
+/.audit_docx/
+*.backup
+
+# Personal diploma artifacts are not part of the public code repository
+*.docx
+*.pptx
+*.pdf

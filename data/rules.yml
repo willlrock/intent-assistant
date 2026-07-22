@@ -1,0 +1,113 @@
+version: "3.1"
+
+rules:
+- rule: Приветствие
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Прощание
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Ответ на благодарность
+  steps:
+  - intent: thanks
+  - action: utter_you_are_welcome
+
+- rule: Показ возможностей
+  steps:
+  - intent: help
+  - action: action_show_capabilities
+
+- rule: Имя ассистента
+  steps:
+  - intent: ask_name
+  - action: utter_name
+
+- rule: Автор ассистента
+  steps:
+  - intent: ask_creator
+  - action: utter_creator
+
+- rule: Описание проекта
+  steps:
+  - intent: ask_project
+  - action: utter_project
+
+- rule: Сохранение имени пользователя
+  steps:
+  - intent: inform_name
+  - action: action_remember_name
+
+- rule: Перезапуск разговора
+  steps:
+  - intent: ask_restart
+  - action: utter_restart
+  - action: action_restart
+
+- rule: Объяснение Rasa
+  steps:
+  - intent: ask_rasa
+  - action: utter_rasa
+
+- rule: Объяснение NLU
+  steps:
+  - intent: ask_nlu
+  - action: utter_nlu
+
+- rule: Объяснение обучения
+  steps:
+  - intent: ask_training
+  - action: utter_training
+
+- rule: Объяснение запуска
+  steps:
+  - intent: ask_run
+  - action: utter_run
+
+- rule: Объяснение структуры проекта
+  steps:
+  - intent: ask_project_structure
+  - action: utter_project_structure
+
+- rule: Объяснение Docker
+  steps:
+  - intent: ask_docker
+  - action: utter_docker
+
+- rule: Отрицательная обратная связь
+  steps:
+  - intent: feedback_bad
+  - action: utter_feedback_bad
+
+- rule: Текущее время
+  steps:
+  - intent: ask_time
+  - action: action_show_time
+
+- rule: Текущая дата
+  steps:
+  - intent: ask_date
+  - action: action_show_date
+
+- rule: Ответ на вопрос о состоянии
+  steps:
+  - intent: smalltalk_howareyou
+  - action: utter_howareyou
+
+- rule: Небольшая шутка
+  steps:
+  - intent: smalltalk_joke
+  - action: utter_joke
+
+- rule: Известная неподдерживаемая тема
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Низкая уверенность NLU
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default

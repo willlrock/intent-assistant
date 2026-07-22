@@ -1,0 +1,83 @@
+version: "3.1"
+
+# Эти сценарии проверяют только предсказание действий Rasa Core.
+# Качество распознавания текста проверяется отдельно на tests/nlu_test.yml.
+stories:
+- story: Core — знакомство и обзор проекта
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform_name
+    entities:
+    - person_name: Анна
+  - action: action_remember_name
+  - intent: help
+  - action: action_show_capabilities
+  - intent: ask_project
+  - action: utter_project
+
+- story: Core — имя и автор
+  steps:
+  - intent: ask_name
+  - action: utter_name
+  - intent: ask_creator
+  - action: utter_creator
+  - intent: thanks
+  - action: utter_you_are_welcome
+
+- story: Core — Rasa NLU и обучение
+  steps:
+  - intent: ask_rasa
+  - action: utter_rasa
+  - intent: ask_nlu
+  - action: utter_nlu
+  - intent: ask_training
+  - action: utter_training
+
+- story: Core — структура Docker и запуск
+  steps:
+  - intent: ask_project_structure
+  - action: utter_project_structure
+  - intent: ask_docker
+  - action: utter_docker
+  - intent: ask_run
+  - action: utter_run
+
+- story: Core — дата и время
+  steps:
+  - intent: ask_date
+  - action: action_show_date
+  - intent: ask_time
+  - action: action_show_time
+
+- story: Core — короткий разговор
+  steps:
+  - intent: smalltalk_howareyou
+  - action: utter_howareyou
+  - intent: smalltalk_joke
+  - action: utter_joke
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Core — помощь после плохого ответа
+  steps:
+  - intent: feedback_bad
+  - action: utter_feedback_bad
+  - intent: help
+  - action: action_show_capabilities
+
+- story: Core — известная неподдерживаемая тема
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: Core — низкая уверенность NLU
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- story: Core — перезапуск разговора
+  steps:
+  - intent: ask_restart
+  - action: utter_restart
+  - action: action_restart

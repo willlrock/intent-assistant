@@ -1,0 +1,44 @@
+# Проверка: docker compose run --rm --no-deps rasa data validate --fail-on-warnings
+# Обучение: docker compose run --rm --no-deps rasa train
+# CLI: docker compose run --rm rasa
+services:
+  rasa:
+    image: rasa/rasa:3.6.21
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command:
+      - shell
+      - --endpoints
+      - endpoints.docker.yml
+    stdin_open: true
+    tty: true
+    depends_on:
+      action_server:
+        condition: service_healthy
+    environment:
+      RASA_TELEMETRY_ENABLED: "false"
+
+  action_server:
+    image: rasa/rasa-sdk:3.6.2
+    working_dir: /app
+    volumes:
+      - ./actions:/app/actions:ro
+    command:
+      - start
+      - --actions
+      - actions.actions
+    expose:
+      - "5055"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://localhost:5055/health', timeout=2)
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    environment:
+      RASA_TELEMETRY_ENABLED: "false"

@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Schema, data, and unit checks (no training)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+      RASA_TELEMETRY_ENABLED: "false"
+      TF_CPP_MIN_LOG_LEVEL: "2"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10.11"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install pip==24.3.1
+          python -m pip install -r requirements-dev.txt
+          python -m pip check
+          python -m rasa --version
+
+      - name: Validate Rasa data and domain
+        run: >-
+          python -m rasa data validate
+          --domain domain.yml
+          --data data
+          --fail-on-warnings
+
+      - name: Run project-level static validation
+        run: python tests/static_validate.py
+
+      - name: Run Python unit tests when present
+        shell: bash
+        run: |
+          if find tests -type f \( -name 'test_*.py' -o -name '*_test.py' \) -print -quit | grep -q .; then
+            python -m pytest -q
+          else
+            echo "No Python unit tests found; pytest skipped."
+          fi
