@@ -1,0 +1,202 @@
+[
+  {
+    "text": "Приятно встретиться с тобой этим утром",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9932712912559509
+    }
+  },
+  {
+    "text": "Я ценю оказанную поддержку",
+    "intent": "thanks",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.5510782599449158
+    }
+  },
+  {
+    "text": "Представься, пожалуйста",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "inform_name",
+      "confidence": 0.935112714767456
+    }
+  },
+  {
+    "text": "Чьей работой стало твоё появление?",
+    "intent": "ask_creator",
+    "intent_prediction": {
+      "name": "thanks",
+      "confidence": 0.5638586282730103
+    }
+  },
+  {
+    "text": "Можно ли проверить модель без повторного обучения?",
+    "intent": "ask_run",
+    "intent_prediction": {
+      "name": "ask_training",
+      "confidence": 0.9996166229248047
+    }
+  },
+  {
+    "text": "Какие каталоги есть у Rasa-проекта?",
+    "intent": "ask_project_structure",
+    "intent_prediction": {
+      "name": "ask_rasa",
+      "confidence": 0.500762403011322
+    }
+  },
+  {
+    "text": "Ты мне не помог",
+    "intent": "feedback_bad",
+    "intent_prediction": {
+      "name": "thanks",
+      "confidence": 0.795018196105957
+    }
+  },
+  {
+    "text": "В сообщённых сведениях есть ошибка",
+    "intent": "feedback_bad",
+    "intent_prediction": {
+      "name": "ask_date",
+      "confidence": 0.7298399209976196
+    }
+  },
+  {
+    "text": "Уже поздно или ещё рано?",
+    "intent": "ask_time",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5094811320304871
+    }
+  },
+  {
+    "text": "Определи, сейчас утро, день, вечер или ночь",
+    "intent": "ask_time",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5425835251808167
+    }
+  },
+  {
+    "text": "С тобой нынче всё ладно?",
+    "intent": "smalltalk_howareyou",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9866999387741089
+    }
+  },
+  {
+    "text": "Ты как?",
+    "intent": "smalltalk_howareyou",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.7040160298347473
+    }
+  },
+  {
+    "text": "В каком ты сегодня расположении духа?",
+    "intent": "smalltalk_howareyou",
+    "intent_prediction": {
+      "name": "ask_project_structure",
+      "confidence": 0.6958075761795044
+    }
+  },
+  {
+    "text": "Пошути, пожалуйста",
+    "intent": "smalltalk_joke",
+    "intent_prediction": {
+      "name": "inform_name",
+      "confidence": 0.4979470372200012
+    }
+  },
+  {
+    "text": "Разряди обстановку хорошей шуткой",
+    "intent": "smalltalk_joke",
+    "intent_prediction": {
+      "name": "smalltalk_howareyou",
+      "confidence": 0.5853334069252014
+    }
+  },
+  {
+    "text": "Сколько будет 347 умножить на 29?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_name",
+      "confidence": 0.9305649995803833
+    }
+  },
+  {
+    "text": "Напиши поздравление с годовщиной свадьбы",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3742619454860687
+    }
+  },
+  {
+    "text": "Как вылечить сильную боль в спине?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_run",
+      "confidence": 0.46617835760116577
+    }
+  },
+  {
+    "text": "Объясни квантовую запутанность простыми словами",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.635073721408844
+    }
+  },
+  {
+    "text": "Как завести автомобиль после морозной ночи?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_run",
+      "confidence": 0.7760034799575806
+    }
+  },
+  {
+    "text": "Подскажи схему вязания тёплого шарфа спицами",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.6222909688949585
+    }
+  },
+  {
+    "text": "Как устроена файловая система Windows?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_project_structure",
+      "confidence": 0.9755270481109619
+    }
+  },
+  {
+    "text": "Что означает слово «раса» в биологии?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_nlu",
+      "confidence": 0.9174363017082214
+    }
+  },
+  {
+    "text": "Как меня зовут?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_name",
+      "confidence": 0.9968974590301514
+    }
+  },
+  {
+    "text": "Какова дата рождения Александра Пушкина?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform_name",
+      "confidence": 0.7035830616950989
+    }
+  }
+]

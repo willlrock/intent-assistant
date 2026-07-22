@@ -1,0 +1,64 @@
+[
+  {
+    "text": "На обращение Темур-Бек я откликнусь",
+    "entities": [
+      {
+        "start": 13,
+        "end": 22,
+        "value": "Темур-Бек",
+        "entity": "person_name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Найди дешёвые билеты в Алматы",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "person_name",
+        "start": 23,
+        "end": 29,
+        "confidence_entity": 0.745909571647644,
+        "value": "Алматы",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Как устроена файловая система Windows?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "person_name",
+        "start": 30,
+        "end": 37,
+        "confidence_entity": 0.5979303121566772,
+        "value": "Windows",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Какова дата рождения Александра Пушкина?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "person_name",
+        "start": 21,
+        "end": 31,
+        "confidence_entity": 0.9825685024261475,
+        "value": "Александра",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "person_name",
+        "start": 32,
+        "end": 39,
+        "confidence_entity": 0.6506542563438416,
+        "value": "Пушкина",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

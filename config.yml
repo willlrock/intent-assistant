@@ -1,0 +1,34 @@
+recipe: default.v1
+language: ru
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: word
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 3
+    max_ngram: 5
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+    random_seed: 42
+  - name: FallbackClassifier
+    threshold: 0.55
+    ambiguity_threshold: 0.10
+
+policies:
+  - name: MemoizationPolicy
+    max_history: 5
+  - name: RulePolicy
+    core_fallback_threshold: 0.30
+    core_fallback_action_name: utter_default
+    enable_fallback_prediction: true
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true
+    random_seed: 42
+
+assistant_id: diploma-russian-study-assistant

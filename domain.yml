@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - help
+  - ask_name
+  - ask_creator
+  - ask_project
+  - inform_name
+  - ask_restart
+  - ask_rasa
+  - ask_nlu
+  - ask_training
+  - ask_run
+  - ask_project_structure
+  - ask_docker
+  - feedback_bad
+  - ask_time
+  - ask_date
+  - smalltalk_howareyou
+  - smalltalk_joke
+  - out_of_scope
+  - nlu_fallback
+
+entities:
+  - person_name
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: person_name
+
+responses:
+  utter_greet:
+    - text: "Здравствуйте! Я учебный русскоязычный помощник на Rasa. Могу рассказать о проекте, его ML-компонентах и запуске."
+    - text: "Привет! Спросите меня о проекте, Rasa, NLU, Docker, обучении модели или структуре репозитория."
+
+  utter_goodbye:
+    - text: "До свидания! Спасибо за разговор."
+    - text: "До встречи! Буду рад снова ответить на вопросы о проекте."
+
+  utter_you_are_welcome:
+    - text: "Пожалуйста! Рад быть полезным."
+    - text: "Не за что. Можем разобрать ещё один вопрос."
+
+  utter_name:
+    - text: "Меня можно называть Rasa-помощником. Я демонстрирую распознавание русскоязычных намерений, извлечение сущностей и управление диалогом."
+
+  utter_creator:
+    - text: "Меня создал Хуршид Мухаммадиев в рамках дипломного проекта о разработке диалоговой системы и виртуального помощника."
+
+  utter_project:
+    - text: "Это учебный проект русскоязычного виртуального помощника. DIETClassifier определяет намерение и извлекает имя пользователя, а правила и диалоговые политики выбирают подготовленный ответ или действие."
+
+  utter_restart:
+    - text: "Хорошо, начинаем заново. Состояние текущего диалога, включая сохранённое имя, будет очищено."
+
+  utter_rasa:
+    - text: "Rasa Open Source — платформа для создания диалоговых систем. В этом проекте она объединяет NLU-модель, состояние диалога, правила, истории и пользовательские действия."
+
+  utter_nlu:
+    - text: "NLU преобразует сообщение в структурированные данные. Intent описывает цель сообщения, а entity выделяет значимое значение: например, в фразе «Меня зовут Анна» intent — inform_name, а Анна — person_name."
+
+  utter_training:
+    - text: "Сначала данные проверяются командой «rasa data validate», затем «rasa train» обучает NLU и диалоговые политики и сохраняет модель в каталоге models. Качество оценивается только на отдельных тестовых примерах."
+
+  utter_run:
+    - text: "Для локального CLI запустите action server командой «rasa run actions», а в другом терминале — «rasa shell --endpoints endpoints.yml». В Docker используйте «docker compose run --rm --no-deps rasa train», затем запустите action_server и откройте shell с endpoints.docker.yml."
+
+  utter_project_structure:
+    - text: "config.yml задаёт NLU-конвейер и политики; domain.yml — intents, entities, slots, ответы и actions; каталог data — обучающие примеры, rules и stories; actions содержит Python-код, а tests — независимые NLU-данные и Core-сценарии."
+
+  utter_docker:
+    - text: "Docker фиксирует совместимые версии Rasa и Rasa SDK. Docker Compose создаёт общую сеть, в которой CLI-контейнер обращается к action server по имени сервиса."
+
+  utter_feedback_bad:
+    - text: "Спасибо за замечание. Попробуйте переформулировать запрос или спросите, какие темы я поддерживаю."
+
+  utter_howareyou:
+    - text: "Спасибо, всё работает штатно. Я готов отвечать на вопросы о проекте."
+
+  utter_joke:
+    - text: "Почему разработчик доверяет логам больше догадок? Потому что у логов всегда есть запись разговора."
+
+  utter_out_of_scope:
+    - text: "Я понял запрос, но эта тема находится за пределами моих возможностей. Я отвечаю на вопросы о проекте, Rasa, NLU, Docker, обучении и запуске."
+
+  utter_default:
+    - text: "Я не уверен, что правильно понял сообщение. Переформулируйте вопрос или спросите о моих возможностях."
+
+actions:
+  - action_remember_name
+  - action_show_capabilities
+  - action_show_time
+  - action_show_date
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
